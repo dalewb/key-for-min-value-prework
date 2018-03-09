@@ -3,8 +3,13 @@
 
 def key_for_min_value(name_hash)
   key = []
-  value = 0
+  value = []
   name_hash.each do |k,v|
-    
+    value << v 
+    if v < value[0]
+      value.unshift(v)
+      key.unshift(k)
+    end 
   end 
+  key[0]
 end
